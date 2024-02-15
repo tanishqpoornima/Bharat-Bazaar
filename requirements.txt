@@ -1,0 +1,10 @@
+flask
+openpyxl
+numpy
+pyodbc
+gunicorn
+SpeechRecognition
+wave
+deepgram-sdk
+Translator
+PyAudio

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/fbdeeca9-a700-4ccd-acd5-5aaaf0b311b3/resourceGroups/appsvc_linux_centralus2/providers/Microsoft.Web/sites/BharatBazar",
+    "appService.deploySubpath": "."
+}
