@@ -26,7 +26,22 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      
+
+      - name: Install requires
+        run: |
+          wget http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz
+          tar -xf pa_stable_v19_20140130.tgz
+          cd portaudio/
+          ./configure
+          make clean
+          make
+          sudo make install
+          sudo apt install build-essential portaudio19-dev
+          sudo apt-get install portaudio19-dev python-all-dev
+          sudo pip3 install pyaudio
+          sudo apt-get install python3-pyaudio
+
+          
       - name: Install dependencies
         run: pip install -r requirements.txt
         
@@ -68,6 +83,20 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5DB8658361F742BF80332E812B873F7E }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_992A333BAF074F53B5857E5A1CBE303B }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_460CC493CC17446CBD1496DB8BE6E8CD }}
+
+      - name: Install require
+        run: |
+          wget http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz
+          tar -xf pa_stable_v19_20140130.tgz
+          cd portaudio/
+          ./configure
+          make clean
+          make
+          sudo make install
+          sudo apt install build-essential portaudio19-dev
+          sudo apt-get install portaudio19-dev python-all-dev
+          sudo pip3 install pyaudio
+          sudo apt-get install python3-pyaudio
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
