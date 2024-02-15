@@ -7,4 +7,3 @@ SpeechRecognition
 wave
 deepgram-sdk
 Translator
-PyAudio
